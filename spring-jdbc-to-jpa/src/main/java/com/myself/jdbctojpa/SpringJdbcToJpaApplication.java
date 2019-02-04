@@ -14,7 +14,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import com.myself.jdbctojpa.entity.Person;
 import com.myself.jdbctojpa.jdbc.PersonJdbcDAO;
 
-@SpringBootApplication
+// @SpringBootApplication
 public class SpringJdbcToJpaApplication implements CommandLineRunner{
 
 	

@@ -2,13 +2,21 @@ package com.myself.jdbctojpa.entity;
 
 import java.util.Date;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.NamedQuery;
+
+@Entity
+@NamedQuery(name="find_all_persons", query="select p from Person p")
 public class Person {
 	
-	
+	@Id
+	@GeneratedValue
 	private int id;
 	private String name;
 	private String  location;
-	private Date date;
+	private Date birth_date;
 	
 	
 	
@@ -20,8 +28,16 @@ public class Person {
 		this.id = id;
 		this.name = name;
 		this.location = location;
-		this.date = date;
+		this.birth_date = date;
 	}
+	
+	public Person(String name, String location, Date date) {
+		super();
+		this.name = name;
+		this.location = location;
+		this.birth_date = date;
+	}
+	
 	public int getId() {
 		return id;
 	}
@@ -41,14 +57,14 @@ public class Person {
 		this.location = location;
 	}
 	public Date getDate() {
-		return date;
+		return birth_date;
 	}
 	public void setDate(Date date) {
-		this.date = date;
+		this.birth_date = date;
 	}
 	@Override
 	public String toString() {
-		return "\nPerson [id=" + id + ", name=" + name + ", location=" + location + ", date=" + date + "]";
+		return "\nPerson [id=" + id + ", name=" + name + ", location=" + location + ", date=" + birth_date + "]";
 	}
 
 	
